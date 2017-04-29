@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>20170423周总结和下周计划 | 我写的文字只是用来发泄，并没有什么实际作用-Never say Never</title>
+    <title>Nginx的配置初试 | 我写的文字只是用来发泄，并没有什么实际作用-Never say Never</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="言必行">
     
 
     
-    <meta name="description" content="这周工作总结（这周主要做了4件事）  App Store上传审核，目前审核两次依然失败，主要是对审核要求不太清楚导致。  自主报表-数据表模块防数据访问慢的优化，经过三天的努力，由于没有源代码，造成定位问题比较困难，最初只能找到问题在服务端。最后经过分析日志，详细精确到某个环节乃至某个耗时的方法，并将结果反馈至公司产品组，正在优化。  Andorid端经分简报展示优化已完成，本来计划这周上线，但">
-<meta name="keywords" content="总结">
+    <meta name="description" content="起因 &amp;emsp;&amp;emsp;服务器内存64G，CPU够强悍。此时，我们共有2个项目，但是有6个子项目。原来都放在一个tomcat里面，经常内存溢出而挂掉，为此，老大愁得焦头烂额。我便提议将各个子项目独立出来，便有了这次经历。  一分为二 &amp;emsp;&amp;emsp;因为之前做过一次简单的反向代理，误以为分离很简单。就毫无顾忌的开干了，我先把前端和后台业务分成了2个tomcat，这时候我就配置ngi">
+<meta name="keywords" content="技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20170423周总结和下周计划">
-<meta property="og:url" content="http://yoursite.com/2017/04/23/20170423周总结和下周计划/index.html">
+<meta property="og:title" content="Nginx的配置初试">
+<meta property="og:url" content="http://yoursite.com/2017/04/29/Nginx的配置初试/index.html">
 <meta property="og:site_name" content="我写的文字只是用来发泄，并没有什么实际作用-Never say Never">
-<meta property="og:description" content="这周工作总结（这周主要做了4件事）  App Store上传审核，目前审核两次依然失败，主要是对审核要求不太清楚导致。  自主报表-数据表模块防数据访问慢的优化，经过三天的努力，由于没有源代码，造成定位问题比较困难，最初只能找到问题在服务端。最后经过分析日志，详细精确到某个环节乃至某个耗时的方法，并将结果反馈至公司产品组，正在优化。  Andorid端经分简报展示优化已完成，本来计划这周上线，但">
-<meta property="og:updated_time" content="2017-04-23T14:00:52.689Z">
+<meta property="og:description" content="起因 &amp;emsp;&amp;emsp;服务器内存64G，CPU够强悍。此时，我们共有2个项目，但是有6个子项目。原来都放在一个tomcat里面，经常内存溢出而挂掉，为此，老大愁得焦头烂额。我便提议将各个子项目独立出来，便有了这次经历。  一分为二 &amp;emsp;&amp;emsp;因为之前做过一次简单的反向代理，误以为分离很简单。就毫无顾忌的开干了，我先把前端和后台业务分成了2个tomcat，这时候我就配置ngi">
+<meta property="og:updated_time" content="2017-04-29T14:38:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20170423周总结和下周计划">
-<meta name="twitter:description" content="这周工作总结（这周主要做了4件事）  App Store上传审核，目前审核两次依然失败，主要是对审核要求不太清楚导致。  自主报表-数据表模块防数据访问慢的优化，经过三天的努力，由于没有源代码，造成定位问题比较困难，最初只能找到问题在服务端。最后经过分析日志，详细精确到某个环节乃至某个耗时的方法，并将结果反馈至公司产品组，正在优化。  Andorid端经分简报展示优化已完成，本来计划这周上线，但">
+<meta name="twitter:title" content="Nginx的配置初试">
+<meta name="twitter:description" content="起因 &amp;emsp;&amp;emsp;服务器内存64G，CPU够强悍。此时，我们共有2个项目，但是有6个子项目。原来都放在一个tomcat里面，经常内存溢出而挂掉，为此，老大愁得焦头烂额。我便提议将各个子项目独立出来，便有了这次经历。  一分为二 &amp;emsp;&amp;emsp;因为之前做过一次简单的反向代理，误以为分离很简单。就毫无顾忌的开干了，我先把前端和后台业务分成了2个tomcat，这时候我就配置ngi">
 
     
     <link rel="alternative" href="/atom.xml" title="我写的文字只是用来发泄，并没有什么实际作用-Never say Never" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/04/23/20170423周总结和下周计划/" title="20170423周总结和下周计划" itemprop="url">20170423周总结和下周计划</a>
+      <a href="/2017/04/29/Nginx的配置初试/" title="Nginx的配置初试" itemprop="url">Nginx的配置初试</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="言必行" target="_blank" itemprop="author">言必行</a>
 		
   <p class="article-time">
-    <time datetime="2017-04-23T13:46:59.000Z" itemprop="datePublished"> Published 2017-04-23</time>
+    <time datetime="2017-04-29T14:14:36.000Z" itemprop="datePublished"> Published 2017-04-29</time>
     
   </p>
 </header>
@@ -97,34 +97,28 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#这周工作总结（这周主要做了4件事）"><span class="toc-number">1.</span> <span class="toc-text">这周工作总结（这周主要做了4件事）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下周计划"><span class="toc-number">2.</span> <span class="toc-text">下周计划</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#起因"><span class="toc-number">1.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一分为二"><span class="toc-number">2.</span> <span class="toc-text">一分为二</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1"><span class="toc-number">2.1.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">2.2.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">2.3.</span> <span class="toc-text">3</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#又遇新难题"><span class="toc-number">3.</span> <span class="toc-text">又遇新难题</span></a></li></ol>
 		
 		</div>
 		
 		<blockquote>
-<h2 id="这周工作总结（这周主要做了4件事）"><a href="#这周工作总结（这周主要做了4件事）" class="headerlink" title="这周工作总结（这周主要做了4件事）"></a>这周工作总结（这周主要做了4件事）</h2></blockquote>
-<ol>
-<li><p>App Store上传审核，目前审核两次依然失败，主要是对审核要求不太清楚导致。</p>
-</li>
-<li><p>自主报表-数据表模块防数据访问慢的优化，经过三天的努力，由于没有源代码，造成定位问题比较困难，最初只能找到问题在服务端。最后经过分析日志，详细精确到某个环节乃至某个耗时的方法，并将结果反馈至公司产品组，正在优化。</p>
-</li>
-<li><p>Andorid端经分简报展示优化已完成，本来计划这周上线，但遇到产品组网络问题，无法上传打包。</p>
-</li>
-<li><p>DataOne服务端编译，现在已经将几个主要模块的代码编译通过</p>
-</li>
-</ol>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2></blockquote>
+<p>&emsp;&emsp;服务器内存64G，CPU够强悍。此时，我们共有2个项目，但是有6个子项目。原来都放在一个tomcat里面，经常内存溢出而挂掉，为此，老大愁得焦头烂额。我便提议将各个子项目独立出来，便有了这次经历。</p>
 <blockquote>
-<h2 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h2></blockquote>
-<ol>
-<li><p>继续完成上周未完成的工作 </p>
-</li>
-<li><p>编译DataOne</p>
-</li>
-<li><p>初步翻阅架构师所涉书籍</p>
-</li>
-<li><p>必须把《自控力》阅读一遍，并理解</p>
-</li>
-</ol>
+<h2 id="一分为二"><a href="#一分为二" class="headerlink" title="一分为二"></a>一分为二</h2></blockquote>
+<p>&emsp;&emsp;因为之前做过一次简单的反向代理，误以为分离很简单。就毫无顾忌的开干了，我先把前端和后台业务分成了2个tomcat，这时候我就配置nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">location /pro1/ &#123;</div><div class="line">    proxy_pass http://localhost:8080/;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>首页能访问了，但是在获取地址的时候，老是获取nginx的地址，无法获取客户端访问的地址和端口，经过一番查询，原来需要再Nginx中配置Host请求头，程序里面就会获取Host这个属性的值，那么就可以获得访问的IP地址和端口了，这个Host有多种配置方式</p>
+<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">location /pro1/ &#123;</div><div class="line">    proxy_pass http://localhost:8080/;</div><div class="line">    proxy_set_header Host $http_host;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其中$http_host变量值是ip:port;</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">location /pro1/ &#123;</div><div class="line">          proxy_pass http://localhost:8080/;</div><div class="line">          proxy_set_header Host $host:$server_port;</div><div class="line">      &#125;</div></pre></td></tr></table></figure>
+<p>其中$host变量是IP地址无端口,$server_port是端口;</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">location /pro1/ &#123;</div><div class="line">            proxy_pass http://localhost:8080/;</div><div class="line">            proxy_set_header Host 10.10.0.1:9090;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<p>这是固定值设置法，不灵活。</p>
+<p>&emsp;&emsp;运气好，配置之后一切可以正常运行，tomcat也很好报内存溢出的问题，不过后端服务依然在内存上开销比较大，因为JDK版本是1.6，内存不能设置过大，所以就有想到把后端服务再拆分一个，就有了现在的3个tomcat，运行一段时间，均我异常。</p>
+<blockquote>
+<h2 id="又遇新难题"><a href="#又遇新难题" class="headerlink" title="又遇新难题"></a>又遇新难题</h2></blockquote>
+<p>&emsp;&emsp;运行一段时间，发现前端的请求也比较多，所以也想到再分一个tomcat，我还是按照老办法，只不过原来的前端在locatin/{}目录，现在将其中一个改为location/path/{}，可是这次却遇到一个新问题，重定向的时候，总是会定位到8080端口，最开始我以为是程序的原来，因此我把程序反编译，找出代码，打印日志，但是最后发现，这跟程序没关系，应该是重定向的问题，然后就在网上查找资料，找了一个类似的问题，不知可不可行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">系统上线时使用nginx 做反向代理，碰到一个纠结的问题：</div><div class="line"> </div><div class="line">问题情况：nginx监听的端口例如是8080，外网开放的端口为80，将80端口NAT到内部的8080端口，这时使用外网地址：http://mydomain/test访问时如果不在域名后面加/，那么域名地址会自动变为http://mydomain:8080/test/。</div><div class="line">解决方法：这是因为nginx做了端口重定向，只需要在nginx.conf配置文件的http或server中添加：port_in_redirect off;</div><div class="line">就可以解决这个问题。</div><div class="line"> </div><div class="line">献给遇到这个问题，还在纠结的孩子们！</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;还未验证，下周生产测试。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -133,7 +127,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/总结/">总结</a>
+  <span></span> <a href="/tags/技术/">技术</a>
   </div>
 
 </div>
@@ -142,7 +136,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/04/23/20170423周总结和下周计划/" data-title="20170423周总结和下周计划 | 我写的文字只是用来发泄，并没有什么实际作用-Never say Never" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/04/29/Nginx的配置初试/" data-title="Nginx的配置初试 | 我写的文字只是用来发泄，并没有什么实际作用-Never say Never" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -156,21 +150,13 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/04/23/久违的小学同学/" title="久违的小学同学">
+ <a href="/2017/04/29/我的朋友圈怎么了？/" title="我的朋友圈怎么了？">
   <strong>上一篇：</strong><br/>
   <span>
-  久违的小学同学</span>
+  我的朋友圈怎么了？</span>
 </a>
 </div>
 
-
-<div class="next">
-<a href="/2017/04/27/把想做的事变为一种习惯/"  title="把想做的事变为一种习惯">
- <strong>下一篇：</strong><br/> 
- <span>把想做的事变为一种习惯
-</span>
-</a>
-</div>
 
 </nav>
 
@@ -182,7 +168,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#这周工作总结（这周主要做了4件事）"><span class="toc-number">1.</span> <span class="toc-text">这周工作总结（这周主要做了4件事）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下周计划"><span class="toc-number">2.</span> <span class="toc-text">下周计划</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#起因"><span class="toc-number">1.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一分为二"><span class="toc-number">2.</span> <span class="toc-text">一分为二</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1"><span class="toc-number">2.1.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">2.2.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">2.3.</span> <span class="toc-text">3</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#又遇新难题"><span class="toc-number">3.</span> <span class="toc-text">又遇新难题</span></a></li></ol>
  
   </div>
 
